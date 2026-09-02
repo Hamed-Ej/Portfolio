@@ -1,6 +1,17 @@
+"use client";
 import ZahedanMap from "@/components/ZahedanMap";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [status, setStatus] = useState<string>("Loading...");
+
+  useEffect(() => {
+    fetch("/api/status")
+      .then((res) => res.json())
+      .then((data) => setStatus(data.message))
+      .catch(() => setStatus("Offline"));
+  }, []);
+
   return (
     <div className="py-20 font-mono">
       <div className="mb-12">
@@ -11,6 +22,7 @@ export default function Home() {
           <span>// HEALTH TEACHER</span>
           <span>// TECH NERD</span>
           <span>// SYSTEM:HUMAN</span>
+          <span className="text-black">// API:{status}</span>
         </div>
       </div>
 
