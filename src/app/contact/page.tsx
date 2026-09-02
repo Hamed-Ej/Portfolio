@@ -11,8 +11,8 @@ export default function Contact() {
         <div className="space-y-6">
           <div>
             <h2 className="text-xs tracking-widest text-gray-500 uppercase">// EMAIL</h2>
-            <a href="mailto:hamedejbary@gmail.com" className="text-2xl font-bold hover:underline">
-              hamedejbary@gmail.com
+            <a href="mailto:hamed@ejbari.me" className="text-2xl font-bold hover:underline">
+              hamed@ejbari.me
             </a>
           </div>
 
@@ -20,9 +20,9 @@ export default function Contact() {
             <h2 className="text-xs tracking-widest text-gray-500 uppercase mb-4">// SOCIALS</h2>
             <div className="grid grid-cols-2 gap-4 text-sm">
               <a href="https://github.com/Hamed-Ej" className="hover:font-bold">GITHUB</a>
-              <a href="https://t.me/hamedejbary" className="hover:font-bold">TELEGRAM</a>
+              <a href="https://t.me/hamedejbari" className="hover:font-bold">TELEGRAM</a>
               <a href="https://instagram.com/hamedejbary" className="hover:font-bold">INSTAGRAM</a>
-              <a href="https://x.com/hamed13821382" className="hover:font-bold">X (TWITTER)</a>
+              <a href="https://x.com/hamed138282" className="hover:font-bold">X (TWITTER)</a>
             </div>
           </div>
         </div>

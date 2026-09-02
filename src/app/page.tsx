@@ -1,17 +1,6 @@
-"use client";
 import ZahedanMap from "@/components/ZahedanMap";
-import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [status, setStatus] = useState<string>("Loading...");
-
-  useEffect(() => {
-    fetch("/api/status")
-      .then((res) => res.json())
-      .then((data) => setStatus(data.message))
-      .catch(() => setStatus("Offline"));
-  }, []);
-
   return (
     <div className="py-20 font-mono">
       <div className="mb-12">
@@ -22,7 +11,6 @@ export default function Home() {
           <span>// HEALTH TEACHER</span>
           <span>// TECH NERD</span>
           <span>// SYSTEM:HUMAN</span>
-          <span className="text-black">// API:{status}</span>
         </div>
       </div>
 
@@ -38,9 +26,9 @@ export default function Home() {
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-sm border-t border-gray-200 pt-8">
         <a href="https://github.com/Hamed-Ej" className="hover:font-bold">GITHUB</a>
-        <a href="https://t.me/hamedejbary" className="hover:font-bold">TELEGRAM</a>
+        <a href="https://t.me/hamedejbari" className="hover:font-bold">TELEGRAM</a>
         <a href="https://instagram.com/hamedejbary" className="hover:font-bold">INSTAGRAM</a>
-        <a href="https://x.com/hamed13821382" className="hover:font-bold">X (TWITTER)</a>
+        <a href="https://x.com/hamed138282" className="hover:font-bold">X (TWITTER)</a>
       </div>
     </div>
   );
