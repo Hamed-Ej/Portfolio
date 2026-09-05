@@ -32,10 +32,19 @@ export default async function BlogPage() {
             return (
               <AnimatedItem key={p.slug}>
                 <Link href={`/blog/${p.slug}`} dir={rtl ? 'rtl' : 'ltr'} className="group block border border-gray-200 dark:border-transparent p-6 hover:border-foreground hover:bg-foreground hover:text-background transition-colors h-full">
+                  {p.cover_image ? (
+                    /* eslint-disable-next-line @next/next/no-img-element */
+                    <img
+                      src={p.cover_image}
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                      className="mb-4 aspect-[16/9] w-full object-cover border border-gray-200 dark:border-transparent grayscale group-hover:grayscale-0 transition"
+                    />
+                  ) : null}
                   <div className="text-[11px] tracking-widest uppercase text-gray-400 group-hover:text-gray-300 mb-2">{p.published_at ? new Date(p.published_at).toLocaleDateString(rtl ? 'fa-IR' : 'en-US', { year: 'numeric', month: 'short', day: 'numeric' }) : ''} // {p.status} {rtl ? '• فارسی' : ''}</div>
                   <h2 className={`text-lg font-bold mb-2 ${rtl ? 'font-lalezar font-normal text-xl leading-relaxed' : ''}`}>{p.title}</h2>
                   <p className={`text-sm text-gray-500 dark:text-gray-400 group-hover:text-gray-300 line-clamp-3 ${rtl ? 'font-lalezar text-[15px] leading-7' : ''}`}>{p.excerpt}</p>
-                  {p.cover_image ? <div className="mt-4 text-xs opacity-60 group-hover:opacity-80">{p.cover_image}</div> : null}
                 </Link>
               </AnimatedItem>
             );
