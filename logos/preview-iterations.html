@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HE Logo — Iteration 1 (Refined Concept 1)</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:JetBrains Mono,monospace;padding:2rem;background:#fafafa;color:#0a0a0a}h1{font-weight:900;letter-spacing:-0.04em} .sub{font-size:0.75rem;letter-spacing:0.16em;opacity:0.6;text-transform:uppercase;margin:0.4rem 0 2rem} .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem} .card{border:1px solid #e5e7eb;overflow:hidden;background:#fff} .card-img{display:flex;align-items:center;justify-content:center;padding:2rem;min-height:340px;background:#fafafa} .card-img.dark{background:#0a0a0a} .card-img img{max-width:100%;max-height:300px} .card-label{padding:1rem;border-top:1px solid #e5e7eb;background:#fff} .card-label h3{font-size:0.9rem;font-weight:800} .card-label p{font-size:0.74rem;opacity:0.68;margin-top:0.35rem;line-height:1.5} .badge{font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;border:1px solid #0a0a0a;padding:0.2rem 0.45rem;display:inline-block;margin-bottom:0.6rem} .strip{display:flex;gap:1rem;align-items:end;margin-top:1rem} .strip img{border:1px solid #e5e7eb}
+</style>
+</head>
+<body>
+<h1>HE — Iteration 1</h1>
+<div class="sub">Refined from Concept 1 Interlock — shared-stem HE, 26px strokes, favicon-tested at 16/32/64px — monochrome brutalist</div>
+<div class="grid">
+  <div class="card">
+    <div class="card-img"><img src="iterations/iteration-1.svg" alt="iteration-1"></div>
+    <div class="card-label"><span class="badge">Iteration 1 — Refined</span><h3>Refined Interlock (512 icon + lockup)</h3><p>Optically balanced arms (shorter middle E), 26px stems for 16px legibility, wordmark tracking 8.5. Base for all exports. Light bg #fafafa, stroke #0a0a0a.</p>
+      <div class="strip"><img src="export/icon-64.png" onerror="this.src='export/icon-32.png'" width="64" height="64" alt="64"><img src="export/icon-32.png" width="32" height="32" alt="32"><img src="export/icon-16.png" width="16" height="16" alt="16"><span style="font-size:0.7rem;opacity:0.6">Favicon check — all strokes survive at 16px</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-img" style="background:#fff"><img src="export/logo.svg" alt="horizontal logo light"></div>
+    <div class="card-label"><span class="badge">Horizontal Lockup — Light</span><h3>1024×320 — Navbar / OG</h3><p>Icon (0.68×) + HE. wordmark, HAMED EJBARI, HEALTH TEACHER tagline. Used for `public/logo.svg` and OG exported PNGs.</p></div>
+  </div>
+  <div class="card">
+    <div class="card-img dark"><img src="export/logo-dark.svg" alt="horizontal logo dark"></div>
+    <div class="card-label"><span class="badge">Horizontal Lockup — Dark</span><h3>Dark variant — #0a0a0a bg</h3><p>Inverted stroke #ededed for dark backgrounds, social dark mode, splash screens.</p></div>
+  </div>
+  <div class="card">
+    <div class="card-img"><img src="export/icon.svg" alt="icon export"></div>
+    <div class="card-label"><span class="badge">Icon — Export</span><h3>Square Icon (transparent)</h3><p>`public/icon.svg` / `favicon.svg` + PNG family `icon-16..2048.png` in `logos/export/` — via `sharp`.</p></div>
+  </div>
+</div>
+<div style="margin-top:2rem;padding:1.2rem;border:1px dashed #d1d5db;font-size:0.78rem;line-height:1.6">
+<strong>Exported files:</strong> <code>public/logo.svg</code> (1196B), <code>public/icon.svg</code> (402B), <code>public/favicon.svg</code>, <code>public/apple-touch-icon.png</code> (3106B, 512), <code>public/icon-192.png</code>, <code>logos/export/logo.svg</code>, <code>logos/export/icon.svg</code>, <code>logos/export/logo-16..2048.png</code>, <code>logos/export/icon-16..2048.png</code>, <code>src/components/Logo.tsx</code> (currentColor, 28px navbar). View full concepts at <a href="preview.html">preview.html</a>.
+</div>
+</body>
+</html>

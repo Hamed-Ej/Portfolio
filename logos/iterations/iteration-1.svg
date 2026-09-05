@@ -1,0 +1,21 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title>HE Interlock — Refined</title>
+  <desc>Refined shared-stem HE: 24px stems, 48px grid, optically balanced arms, favicon-tested</desc>
+  <rect width="512" height="512" fill="#fafafa"/>
+  <!-- construction grid (subtle, for showcase only — remove for final icon export) -->
+  <g id="icon" fill="none" stroke="#0a0a0a" stroke-width="24" stroke-linecap="square" stroke-linejoin="miter">
+    <!-- H -->
+    <path d="M112 88 V424" />
+    <path d="M232 88 V424" />
+    <path d="M112 256 H232" />
+    <!-- E -->
+    <path d="M232 106 H400" />
+    <path d="M232 256 H372" />
+    <path d="M232 406 H400" />
+  </g>
+  <!-- wordmark — tighter tracking for small lockup -->
+  <g id="wordmark" font-family="JetBrains Mono, SF Mono, monospace" font-weight="900" fill="#0a0a0a" text-anchor="middle">
+    <text x="256" y="468" font-size="18" letter-spacing="8.5" font-weight="800">HE   •   SYSTEM:HUMAN</text>
+    <text x="256" y="488" font-size="10" letter-spacing="5" font-weight="600" opacity="0.55">ZAHEDAN  —  HEALTH × TECH</text>
+  </g>
+</svg>

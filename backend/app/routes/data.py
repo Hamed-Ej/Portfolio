@@ -9,11 +9,11 @@ def get_status():
 @data_bp.route('/profile', methods=['GET'])
 def get_profile():
     return jsonify({
-        'bio': 'Health teacher by vocation. Computer systems engineer by obsession. I believe the human body is the most complex machine in existence—I study it for a living, and I optimize it with code.',
+        'bio': 'Health teacher and systems engineer based in Zahedan. Focused on clear teaching and reliable infrastructure.',
         'skills': [
-            {'id': '01', 'name': 'LINUX', 'detail': 'Because root access is the only access that matters.'},
-            {'id': '02', 'name': 'PYTHON', 'detail': 'The glue that automates the chaos.'},
-            {'id': '03', 'name': 'HARDWARE', 'detail': 'Knowing how the metal talks to the logic.'}
+            {'id': '01', 'name': 'Linux', 'detail': 'Servers, networking and self-hosting.'},
+            {'id': '02', 'name': 'Python', 'detail': 'Automation, backends and tooling.'},
+            {'id': '03', 'name': 'Hardware', 'detail': 'From components to operating systems.'}
         ]
     })
 

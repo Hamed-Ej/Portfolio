@@ -1,0 +1,11 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>HE Icon</title>
+  <g id="icon" fill="none" stroke="#0a0a0a" stroke-width="26" stroke-linecap="square" stroke-linejoin="miter">
+    <path d="M116 92 V420"/>
+    <path d="M236 92 V420"/>
+    <path d="M116 256 H236"/>
+    <path d="M236 110 H396"/>
+    <path d="M236 256 H370"/>
+    <path d="M236 402 H396"/>
+  </g>
+</svg>

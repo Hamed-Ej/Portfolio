@@ -1,47 +1,47 @@
+import type { Metadata } from "next";
+import { AnimatedStagger, AnimatedItem } from "@/components/AnimatedSection";
+
+export const metadata: Metadata = {
+  title: "About",
+  description: "About Hamed Ejbari — health teacher and systems engineer from Zahedan.",
+};
+
+const skills = [
+  { id: "01", name: "Linux", detail: "Servers, networking and self-hosting." },
+  { id: "02", name: "Python", detail: "Automation, backends and tooling." },
+  { id: "03", name: "Hardware", detail: "From components to operating systems." },
+];
+
 export default function About() {
   return (
-    <div className="py-20 font-mono">
-      <h1 className="text-4xl font-black tracking-tighter mb-12 uppercase">// SYSTEM_PROFILE</h1>
+    <AnimatedStagger className="py-24">
+      <AnimatedItem>
+        <h1 className="text-5xl md:text-6xl font-black tracking-tighter mb-16">About</h1>
+      </AnimatedItem>
 
-      <div className="grid md:grid-cols-2 gap-12">
-        <section>
-          <h2 className="text-xs tracking-widest text-gray-500 uppercase mb-4">// BIO</h2>
-          <p className="text-lg text-gray-700 leading-relaxed border-l-2 border-gray-900 pl-6">
-            Health teacher by vocation. Computer systems engineer by obsession.
-            I believe the human body is the most complex machine in existence—I study it for a living,
-            and I optimize it with code. Whether I'm teaching the mechanics of human movement
-            or configuring a Linux kernel, my goal is the same:
-            <span className="font-bold text-black"> Efficiency. Stability. Optimization.</span>
+      <div className="grid md:grid-cols-2 gap-16">
+        <AnimatedItem>
+          <h2 className="text-xs tracking-widest text-gray-400 uppercase mb-6">About</h2>
+          <p className="text-lg text-gray-500 dark:text-gray-400 leading-relaxed border-l-2 border-foreground pl-6">
+            I&apos;m a health teacher and systems engineer based in Zahedan. I work on human health and on reliable tech — teaching, coaching and building infrastructure that is simple and maintainable.
           </p>
-        </section>
+        </AnimatedItem>
 
-        <section>
-          <h2 className="text-xs tracking-widest text-gray-500 uppercase mb-4">// TECH_STACK</h2>
-          <ul className="space-y-4 text-lg">
-            <li className="flex items-center gap-4">
-              <span className="font-bold text-2xl">01</span>
-              <div>
-                <span className="block font-bold text-black">LINUX</span>
-                <span className="text-gray-500 text-sm">Because root access is the only access that matters.</span>
-              </div>
-            </li>
-            <li className="flex items-center gap-4">
-              <span className="font-bold text-2xl">02</span>
-              <div>
-                <span className="block font-bold text-black">PYTHON</span>
-                <span className="text-gray-500 text-sm">The glue that automates the chaos.</span>
-              </div>
-            </li>
-            <li className="flex items-center gap-4">
-              <span className="font-bold text-2xl">03</span>
-              <div>
-                <span className="block font-bold text-black">HARDWARE</span>
-                <span className="text-gray-500 text-sm">Knowing how the metal talks to the logic.</span>
-              </div>
-            </li>
+        <AnimatedItem>
+          <h2 className="text-xs tracking-widest text-gray-400 uppercase mb-6">Focus</h2>
+          <ul className="space-y-6">
+            {skills.map((skill) => (
+              <li key={skill.id} className="group flex items-start gap-4">
+                <span className="font-bold text-3xl text-gray-200 dark:text-gray-700 group-hover:text-foreground transition-colors">{skill.id}</span>
+                <div>
+                  <span className="block font-bold text-foreground">{skill.name}</span>
+                  <span className="text-gray-500 dark:text-gray-400 text-sm">{skill.detail}</span>
+                </div>
+              </li>
+            ))}
           </ul>
-        </section>
+        </AnimatedItem>
       </div>
-    </div>
+    </AnimatedStagger>
   );
 }

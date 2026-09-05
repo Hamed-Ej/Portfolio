@@ -1,0 +1,22 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title>HE Interlock — Brutalist Lettermark</title>
+  <desc>Geometric H and E sharing a stem, 3-stroke brutalist construction</desc>
+  <rect width="512" height="512" fill="#fafafa"/>
+  <g id="icon" fill="none" stroke="#0a0a0a" stroke-width="22" stroke-linecap="square" stroke-linejoin="miter">
+    <!-- H left stem -->
+    <path d="M116 90 V422"/>
+    <!-- H right stem (shared with E spine) -->
+    <path d="M228 90 V422"/>
+    <!-- H bar -->
+    <path d="M116 256 H228"/>
+    <!-- E top arm -->
+    <path d="M228 108 H396"/>
+    <!-- E middle arm (shorter) -->
+    <path d="M228 256 H368"/>
+    <!-- E bottom arm -->
+    <path d="M228 404 H396"/>
+  </g>
+  <g id="wordmark" font-family="JetBrains Mono, SF Mono, monospace" font-weight="900" fill="#0a0a0a" text-anchor="middle">
+    <text x="256" y="478" font-size="22" letter-spacing="8" font-weight="700">HE — SYSTEM:HUMAN</text>
+  </g>
+</svg>

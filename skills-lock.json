@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "logo-designer": {
+      "source": "neonwatty/logo-designer-skill",
+      "sourceType": "github",
+      "skillPath": "skills/logo-designer/SKILL.md",
+      "computedHash": "e356c75b171538a2452733c86034c619fafbc7c6368c99c2802b1e28a3b42acd"
+    }
+  }
+}

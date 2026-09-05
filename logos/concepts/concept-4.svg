@@ -1,0 +1,22 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title>Chip Heart — Bio + Logic</title>
+  <desc>Heart silhouette formed by circuit trace and node, minimal fusion</desc>
+  <rect width="512" height="512" fill="#fafafa"/>
+  <g id="icon" fill="none" stroke="#0a0a0a" stroke-width="18" stroke-linejoin="round">
+    <!-- heart circuit -->
+    <path d="M256 352 L150 248 C122 220 122 176 150 148 C178 120 220 120 248 148 L256 156 L264 148 C292 120 334 120 362 148 C390 176 390 220 362 248 L256 352 Z" fill="none" stroke-width="22"/>
+    <!-- inner trace -->
+    <path d="M188 212 H258 V242 H324" stroke-width="10" opacity="0.95"/>
+    <path d="M188 260 H244 V288 H324" stroke-width="10" opacity="0.95"/>
+    <!-- nodes -->
+    <circle cx="188" cy="212" r="14" fill="#0a0a0a" stroke="none"/>
+    <circle cx="324" cy="242" r="14" fill="#0a0a0a" stroke="none"/>
+    <circle cx="324" cy="288" r="10" fill="#0a0a0a" stroke="none"/>
+    <!-- center pulse -->
+    <rect x="240" y="200" width="32" height="32" fill="#0a0a0a" stroke="none"/>
+    <rect x="248" y="208" width="16" height="16" fill="#fafafa" stroke="none"/>
+  </g>
+  <g id="wordmark" font-family="JetBrains Mono, SF Mono, monospace" font-weight="900" fill="#0a0a0a" text-anchor="middle">
+    <text x="256" y="478" font-size="20" letter-spacing="7">HE — BIOLOGY × CODE</text>
+  </g>
+</svg>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logo Preview - Concepts — HE</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: JetBrains Mono, SF Mono, monospace; padding: 2rem; transition: background-color 0.3s, color 0.3s; }
+  body.light { background: #fafafa; color: #0a0a0a; }
+  body.dark { background: #0a0a0a; color: #ededed; }
+  .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; gap:1rem; flex-wrap:wrap; }
+  h1 { font-size: 1.25rem; font-weight: 800; letter-spacing: -0.03em; }
+  .sub { font-size: 0.75rem; letter-spacing: 0.15em; opacity: 0.6; text-transform: uppercase; margin-bottom: 2rem; }
+  .toggle { padding: 0.5rem 1rem; border: 1px solid currentColor; background: transparent; color: inherit; cursor: pointer; font-family: inherit; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+  .card { border: 1px solid rgba(128,128,128,0.25); overflow: hidden; background: #fff; }
+  body.dark .card { background: #111; border-color: rgba(255,255,255,0.12); }
+  .card-img { display: flex; align-items: center; justify-content: center; padding: 1.25rem; min-height: 320px; background: #fafafa; }
+  body.dark .card-img { background: #0a0a0a; }
+  .card-img img { max-width: 100%; max-height: 280px; width: auto; height: auto; }
+  .card-label { padding: 1rem; border-top: 1px solid rgba(128,128,128,0.2); background: #fff; }
+  body.dark .card-label { background: #111; }
+  .card-label h3 { font-size: 0.85rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.4rem; }
+  .card-label p { font-size: 0.72rem; line-height: 1.5; opacity: 0.7; }
+  .badge { display: inline-block; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid currentColor; padding: 0.15rem 0.4rem; margin-bottom: 0.6rem; opacity: 0.8; }
+  .notes { margin-top: 2.5rem; padding: 1.25rem; border: 1px dashed rgba(128,128,128,0.3); font-size: 0.78rem; line-height: 1.6; opacity: 0.8; }
+  .notes strong { opacity: 1; }
+  a.btn { display: inline-block; margin-top: 0.8rem; border: 1px solid currentColor; padding: 0.5rem 0.9rem; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: inherit; }
+</style>
+</head>
+<body class="light">
+  <div class="header">
+    <div>
+      <h1>HE — Logo Concepts</h1>
+      <div style="font-size:0.7rem; letter-spacing:0.18em; opacity:0.6; text-transform:uppercase; margin-top:0.25rem;">Hamed Ejbari — Health & Tech — Monochrome Brutalist — 512×512 icon, 1024×512 lockup ready</div>
+    </div>
+    <button class="toggle" onclick="document.body.classList.toggle('dark'); document.body.classList.toggle('light'); this.textContent = document.body.classList.contains('dark') ? '☾ Light' : '◐ Dark';">◐ Dark</button>
+  </div>
+  <div class="sub">5 directions — pick a number or describe remix (e.g., "1 but with 3's slashes", "2 with thinner strokes")</div>
+  <div class="grid">
+    <div class="card">
+      <div class="card-img"><img src="concepts/concept-1.svg" alt="concept-1"></div>
+      <div class="card-label"><div class="badge">01 — Interlock</div><h3>HE Interlock</h3><p>Shared-stem H+E, 3-stroke brutalist. Most architectural. Works at 16px because stems are 22px. Pair with `HE.` wordmark. Best for stamp + favicon.</p></div>
+    </div>
+    <div class="card">
+      <div class="card-img"><img src="concepts/concept-2.svg" alt="concept-2"></div>
+      <div class="card-label"><div class="badge">02 — Grid Core</div><h3>System Node</h3><p>3×3 grid + hollow center (human core). Speaks system:human, chip + biology. Corner wedges add editorial tension. Most ownable at large sizes.</p></div>
+    </div>
+    <div class="card">
+      <div class="card-img"><img src="concepts/concept-3.svg" alt="concept-3"></div>
+      <div class="card-label"><div class="badge">03 — Slash Protocol</div><h3>//HE</h3><p>Comment syntax `//` + HE. Directly ties to `// SYSTEM_PROFILE` copy across site. Double slash = code + comment. Most narrative, lightest mark.</p></div>
+    </div>
+    <div class="card">
+      <div class="card-img"><img src="concepts/concept-4.svg" alt="concept-4"></div>
+      <div class="card-label"><div class="badge">04 — Chip Heart</div><h3>Bio × Logic</h3><p>Heart circuit fusion, nodes + traces. Most literal health+tech metaphor. Heavier emotional load — best if you want warmth in otherwise cold system.</p></div>
+    </div>
+    <div class="card">
+      <div class="card-img"><img src="concepts/concept-5.svg" alt="concept-5"></div>
+      <div class="card-label"><div class="badge">05 — Stamp Badge</div><h3>Industrial Stamp</h3><p>Square stamp HE. with tick corners + Zahedan tag. Most authoritative, feels like hardware certification. Best for OG cards + social avatar.</p></div>
+    </div>
+  </div>
+  <div class="notes">
+    <strong>How to choose:</strong> All are monochrome, viewBox 512×512, flat fills, stroke ≥10px (legible at 16px). 01 & 05 are most brutalist (match current HE. text). 03 is most editorial (matches // copy). 02 is most systemic.<br>
+    Reply with: <code>1</code> / <code>3</code> etc., or <code>“1 but thinner”</code>, <code>“2 with 1’s typography”</code>, <code>“combine 1 + 3”</code>. I’ll iterate in <code>logos/iterations/</code> and re-render this preview. When happy, say <code>export</code> and I’ll generate <code>public/logo.svg</code> + PNG family + favicons.
+  </div>
+</body>
+</html>
