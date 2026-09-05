@@ -19,9 +19,11 @@ services:
 
   backend:
     build: ./backend
-    expose:
-      - "5000"
-    # remove host port exposure for prod; use 127.0.0.1:5000:5000 for dev if needed
+    # Published on loopback only: host nginx proxies /api/ and /uploads/ to
+    # localhost:5000, but the port stays unreachable from the public network.
+    # (Plain `expose` is container-network only, which broke host nginx with 502s.)
+    ports:
+      - "127.0.0.1:5000:5000"
     volumes:
       - ./backend/instance:/app/instance
     env_file:

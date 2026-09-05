@@ -36,9 +36,12 @@ def ensure_admin_hash(app):
     cfg = app.config
     if not cfg.get("ADMIN_PASSWORD_HASH") and cfg.get("ADMIN_PASSWORD"):
         h = hash_password(cfg["ADMIN_PASSWORD"])
-        app.logger.warning(f"Generated ADMIN_PASSWORD_HASH (set in env): {h}")
+        app.logger.warning(f"Generated ADMIN_PASSWORD_HASH from ADMIN_PASSWORD (store it in env, then remove the plain password): {h}")
         cfg["ADMIN_PASSWORD_HASH"] = h
-    # also support hashing on startup for .env convenience: if hash empty, create default admin/admin123? no — require env
+    if not cfg.get("ADMIN_PASSWORD_HASH"):
+        app.logger.error("ADMIN LOGIN DISABLED: neither ADMIN_PASSWORD_HASH nor ADMIN_PASSWORD is set. Set one in .env and restart the backend.")
+    elif not cfg["ADMIN_PASSWORD_HASH"].startswith("$argon2"):
+        app.logger.error("ADMIN_PASSWORD_HASH looks mangled (docker compose expands $VAR — escape each $ as $$ in .env, or use plain ADMIN_PASSWORD instead). Admin login will fail until fixed.")
     # create upload folder
     from pathlib import Path
     Path(app.config["UPLOAD_FOLDER"]).mkdir(parents=True, exist_ok=True)
