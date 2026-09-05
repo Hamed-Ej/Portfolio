@@ -1,49 +1,43 @@
-"use client";
+import type { Metadata } from "next";
 import GitHubTracker from "@/components/GitHubTracker";
-import { useEffect, useState } from "react";
+import { AnimatedStagger, AnimatedItem } from "@/components/AnimatedSection";
+import { getProjects } from "@/lib/projects";
 
-interface Project {
-  name: string;
-  desc: string;
-  url: string;
-}
+export const metadata: Metadata = {
+  title: "Projects",
+  description: "Projects by Hamed Ejbari — Password Generator, Currency Converter, Drawpad, ai-agent.",
+};
 
-export default function Projects() {
-  const [projects, setProjects] = useState<Project[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetch("/api/projects")
-      .then((res) => res.json())
-      .then((data) => {
-        setProjects(data);
-        setLoading(false);
-      })
-      .catch(() => setLoading(false));
-  }, []);
-
+export default async function Projects() {
+  const projects = await getProjects();
   return (
-    <div className="py-20 font-mono">
-      <h1 className="text-4xl font-black tracking-tighter mb-12 uppercase">// PROJECTS_ARCHIVE</h1>
+    <AnimatedStagger className="py-24">
+      <AnimatedItem>
+        <h1 className="text-5xl md:text-6xl font-black tracking-tighter mb-16">Projects</h1>
+      </AnimatedItem>
 
-      <GitHubTracker />
+      <AnimatedItem>
+        <GitHubTracker />
+      </AnimatedItem>
 
-      {loading ? (
-        <p className="animate-pulse tracking-widest text-gray-500 uppercase">// FETCHING_DATA...</p>
-      ) : (
-        <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project) => (
+      <AnimatedStagger className="grid md:grid-cols-2 gap-6">
+        {projects.map((project) => (
+          <AnimatedItem key={project.name}>
             <a
-              key={project.name}
               href={project.url}
-              className="block border border-gray-900 p-6 hover:bg-gray-900 hover:text-white transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block border border-gray-200 dark:border-transparent p-6 hover:border-foreground hover:bg-foreground hover:text-background transition-all duration-300 h-full"
             >
-              <h2 className="text-xl font-bold mb-2">{project.name}</h2>
-              <p className="text-sm text-gray-500 hover:text-gray-300">{project.desc}</p>
+              <div className="flex justify-between items-start mb-3">
+                <h2 className="text-lg font-bold">{project.name}</h2>
+                <span className="opacity-0 group-hover:opacity-100 transition-opacity text-sm">&rarr;</span>
+              </div>
+              <p className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-gray-300 dark:group-hover:text-gray-400">{project.desc}</p>
             </a>
-          ))}
-        </div>
-      )}
-    </div>
+          </AnimatedItem>
+        ))}
+      </AnimatedStagger>
+    </AnimatedStagger>
   );
 }

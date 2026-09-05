@@ -5,13 +5,32 @@ services:
       - "3000:3000"
     environment:
       - BACKEND_URL=http://backend:5000
+      - NEXT_PUBLIC_SITE_URL=https://ejbari.me
     depends_on:
-      - backend
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:3000"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
 
   backend:
     build: ./backend
-    ports:
-      - "5000:5000"
+    expose:
+      - "5000"
+    # remove host port exposure for prod; use 127.0.0.1:5000:5000 for dev if needed
+    volumes:
+      - ./backend/instance:/app/instance
+    env_file:
+      - .env
     environment:
-      - FLASK_ENV=production
+      - FLASK_DEBUG=0
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://localhost:5000/healthz', timeout=2).getcode()==200 else 1)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
 

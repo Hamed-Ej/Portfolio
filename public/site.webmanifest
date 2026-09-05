@@ -1,0 +1,9 @@
+{
+  \"name\": \"Hamed Ejbari\",
+  \"short_name\": \"HE\",
+  \"start_url\": \"/\",
+  \"display\": \"standalone\",
+  \"background_color\": \"#fafafa\",
+  \"theme_color\": \"#0a0a0a\",
+  \"icons\": [{\"src\": \"/favicon.ico\", \"sizes\": \"any\", \"type\": \"image/x-icon\"}]
+}

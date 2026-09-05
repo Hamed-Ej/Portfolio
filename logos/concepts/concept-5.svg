@@ -1,0 +1,28 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title>Stamp Badge — Industrial Authority</title>
+  <desc>Square stamp with HE. and corner ticks, brutalist authority</desc>
+  <rect width="512" height="512" fill="#fafafa"/>
+  <g id="icon">
+    <!-- outer stamp -->
+    <rect x="72" y="72" width="368" height="368" fill="none" stroke="#0a0a0a" stroke-width="22"/>
+    <!-- inner inset -->
+    <rect x="92" y="92" width="328" height="328" fill="none" stroke="#0a0a0a" stroke-width="6" opacity="0.9"/>
+    <!-- corner ticks -->
+    <g stroke="#0a0a0a" stroke-width="10" stroke-linecap="square">
+      <path d="M72 140 V72 H140"/>
+      <path d="M372 72 H440 V140"/>
+      <path d="M440 372 V440 H372"/>
+      <path d="M140 440 H72 V372"/>
+    </g>
+    <!-- HE. -->
+    <g font-family="JetBrains Mono, SF Mono, monospace" font-weight="900" fill="#0a0a0a" text-anchor="middle">
+      <text x="256" y="272" font-size="140" letter-spacing="-10">HE.</text>
+      <text x="256" y="320" font-size="14" letter-spacing="8" font-weight="700">ZAHEDAN — SYSTEM:HUMAN</text>
+    </g>
+    <!-- bottom rule + tag -->
+    <rect x="110" y="356" width="292" height="6" fill="#0a0a0a"/>
+  </g>
+  <g id="wordmark" font-family="JetBrains Mono, SF Mono, monospace" fill="#0a0a0a" text-anchor="middle">
+    <text x="256" y="478" font-size="18" letter-spacing="6" font-weight="700">HE — EST. ZAHEDAN</text>
+  </g>
+</svg>

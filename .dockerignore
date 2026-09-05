@@ -1,6 +1,15 @@
 node_modules
 .next
+out
 backend/venv
 backend/__pycache__
+backend/instance
 .git
 .claude
+.opencode
+.env
+backend/.env
+*.log
+coverage
+.vercel
+.DS_Store
