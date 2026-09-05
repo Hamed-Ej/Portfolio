@@ -3,6 +3,9 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { fetchPost, fetchAllSlugs, isRTL } from "@/lib/blog";
 
+export const revalidate = 60;
+export const dynamicParams = true;
+
 export async function generateStaticParams() {
   const slugs = await fetchAllSlugs();
   return slugs.map((slug) => ({ slug }));

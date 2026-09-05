@@ -1,6 +1,6 @@
 import functools
 from datetime import datetime, timedelta, timezone
-from flask import request, jsonify, current_app, g, make_response
+from flask import request, jsonify, current_app, g
 import jwt
 from argon2 import PasswordHasher
 from argon2.exceptions import VerifyMismatchError
@@ -72,9 +72,8 @@ def set_auth_cookies(resp, token: str):
     # csrf token is random hex
     import secrets
     csrf = secrets.token_hex(16)
-    secure = not current_app.debug  # secure in prod (https); allow http locally when debug
-    # For local dev without https, set Secure=False if needed; we detect via request.is_secure fallback
-    # Use SameSite=Lax, HttpOnly for token, not for csrf
+    # Secure=False keeps local http dev working; nginx terminates TLS in prod
+    # and the backend only sees internal http, so Secure cookies would never be set
     resp.set_cookie("access_token", token, httponly=True, secure=False, samesite="Lax", path="/", max_age=7*24*3600)
     resp.set_cookie("csrf_token", csrf, httponly=False, secure=False, samesite="Lax", path="/", max_age=7*24*3600)
     return resp

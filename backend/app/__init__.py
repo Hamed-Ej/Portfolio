@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, send_from_directory, request
+from flask import Flask, jsonify, send_from_directory
 from flask_cors import CORS
 from .config import Config
 from .extensions import db, migrate
@@ -45,13 +45,6 @@ def create_app():
     app.register_blueprint(blog_bp, url_prefix='/api')
 
     from .routes.admin import admin_bp
-    # rate limit login
-    admin_bp_login = admin_bp
-    # apply limiter to login route separately via decorator? do globally:
-    # wrap login function
-    original_login = None
-    for rule in list(app.url_map.iter_rules()):
-        pass
     app.register_blueprint(admin_bp, url_prefix='/api/admin')
 
     # rate limit login endpoint

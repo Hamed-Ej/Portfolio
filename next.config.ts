@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
     formats: ["image/avif", "image/webp"],
   },
   experimental: {
-    optimizePackageImports: ["framer-motion"],
+    optimizePackageImports: ["framer-motion", "react-markdown", "next-themes"],
   },
   async headers() {
     return [

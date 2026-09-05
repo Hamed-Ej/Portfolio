@@ -1,6 +1,5 @@
+import re
 from flask import Blueprint, request, jsonify
-from datetime import datetime, timezone
-from slugify import slugify
 import markdown
 import bleach
 from ..extensions import db
@@ -8,20 +7,23 @@ from ..models import Post
 
 blog_bp = Blueprint("blog_bp", __name__)
 
-ALLOWED_TAGS = bleach.sanitizer.ALLOWED_TAGS.union({"p","pre","code","h1","h2","h3","h4","h5","h6","img","hr","br","table","thead","tbody","tr","th","td","blockquote","ul","ol","li","a","strong","em","del","span","div"})
-ALLOWED_ATTRS = {**bleach.sanitizer.ALLOWED_ATTRIBUTES, "a": ["href","title","target","rel"], "img": ["src","alt","title","width","height"], "code": ["class"], "span": ["class"], "pre": ["class"]}
+ALLOWED_TAGS = frozenset({"p","pre","code","h1","h2","h3","h4","h5","h6","img","hr","br","table","thead","tbody","tr","th","td","blockquote","ul","ol","li","a","strong","em","del","span","div",
+    "b","i","u","s","sub","sup","kbd","samp","var","dl","dt","dd","caption","colgroup","col","tfoot","figure","figcaption","abbr","acronym"})
+ALLOWED_ATTRS = {"a": ["href","title","target","rel"], "img": ["src","alt","title","width","height"], "code": ["class"], "span": ["class"], "pre": ["class"], "abbr": ["title"], "th": ["align"], "td": ["align"]}
 ALLOWED_PROTOCOLS = ["http","https","mailto"]
 
+_MD_STRIP_RE = re.compile(r"[#*`_>\[\]\(\)!]")
+_WS_RE = re.compile(r"\s+")
+
 def md_to_html(md_text: str) -> str:
-    html = markdown.markdown(md_text or "", extensions=["fenced_code","codehilite","tables","toc"])
-    clean = bleach.clean(html, tags=ALLOWED_TAGS, attributes=ALLOWED_ATTRS, protocols=ALLOWED_PROTOCOLS, strip=False)
-    # linkify without breaking
-    return clean
+    # fenced_code without codehilite: frontend already highlights via rehype-highlight,
+    # so skip per-request Pygments highlighting here
+    html = markdown.markdown(md_text or "", extensions=["fenced_code","tables","toc"])
+    return bleach.clean(html, tags=ALLOWED_TAGS, attributes=ALLOWED_ATTRS, protocols=ALLOWED_PROTOCOLS, strip=False)
 
 def excerpt_from_md(md_text: str, max_len=160):
-    import re
-    txt = re.sub(r"[#*`_>\[\]\(\)!]", " ", md_text or "")
-    txt = re.sub(r"\s+", " ", txt).strip()
+    txt = _MD_STRIP_RE.sub(" ", md_text or "")
+    txt = _WS_RE.sub(" ", txt).strip()
     if len(txt) <= max_len:
         return txt
     return txt[:max_len-1].strip() + "…"

@@ -6,9 +6,10 @@ export default function GitHubTracker() {
       <img
         src="https://ghchart.rshah.org/Hamed-Ej"
         alt="Hamed Ejbari's GitHub contributions"
-        className="w-full dark:invert dark:hue-rotate-180 dark:brightness-90 dark:contrast-125"
+        className="w-full h-auto aspect-[800/150] dark:invert dark:hue-rotate-180 dark:brightness-90 dark:contrast-125"
         loading="lazy"
         decoding="async"
+        referrerPolicy="no-referrer"
       />
     </div>
   );

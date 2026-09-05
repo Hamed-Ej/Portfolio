@@ -7,9 +7,13 @@ backend/instance
 .git
 .claude
 .opencode
+.agents
+.claude/skills
 .env
 backend/.env
 *.log
 coverage
 .vercel
 .DS_Store
+logos
+skills-lock.json

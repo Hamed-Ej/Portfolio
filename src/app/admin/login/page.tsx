@@ -37,8 +37,7 @@ export default function LoginPage() {
 
   return (
     <div className="py-24 max-w-md mx-auto">
-      <h1 className="text-3xl font-black tracking-tighter mb-2">// ADMIN_LOGIN</h1>
-      <p className="text-xs tracking-widest uppercase text-gray-400 mb-8">Default admin / admin123 — change in .env</p>
+      <h1 className="text-3xl font-black tracking-tighter mb-8">// ADMIN_LOGIN</h1>
       <form onSubmit={submit} className="border border-foreground p-6 space-y-4 bg-background">
         <div>
           <label className="text-xs tracking-widest uppercase text-gray-500 block mb-1">Username</label>
