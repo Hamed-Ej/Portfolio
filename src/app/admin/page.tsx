@@ -67,7 +67,7 @@ export default function AdminDashboard() {
 
   return (
     <div className="py-16">
-      <div className="flex justify-between items-start gap-4 mb-8">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-8">
         <div>
           <h1 className="text-4xl font-black tracking-tighter uppercase">// ADMIN_DASHBOARD</h1>
           <p className="text-xs tracking-widest uppercase text-gray-400 mt-2">Simple publisher — drafts are private, published are public</p>
@@ -94,13 +94,13 @@ export default function AdminDashboard() {
 
       <div className="border border-gray-200 dark:border-transparent divide-y divide-gray-200 dark:divide-transparent">
         {posts.map((p) => (
-          <div key={p.id} className={`p-4 flex justify-between items-center gap-4 hover:bg-gray-50 dark:hover:bg-gray-900 ${p.lang === 'fa' ? 'font-lalezar' : ''}`} dir={p.lang === 'fa' ? 'rtl' : 'ltr'}>
-            <div className="min-w-0">
+          <div key={p.id} className={`p-4 flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 hover:bg-gray-50 dark:hover:bg-gray-900 ${p.lang === 'fa' ? 'font-lalezar' : ''}`} dir={p.lang === 'fa' ? 'rtl' : 'ltr'}>
+            <div className="min-w-0 flex-1">
               <div className={`font-bold truncate ${p.lang === 'fa' ? 'font-lalezar font-normal text-[15px]' : ''}`}>{p.title}</div>
               <div className="text-xs tracking-widest uppercase text-gray-500 truncate">/{p.slug} — {p.status} {p.lang === 'fa' ? '• FA • RTL' : '• EN'} {p.published_at ? `• ${new Date(p.published_at).toLocaleDateString()}` : ''}</div>
               <div className="text-sm text-gray-500 line-clamp-1">{p.excerpt}</div>
             </div>
-            <div className="flex gap-2 shrink-0">
+            <div className="flex flex-wrap gap-2 shrink-0">
               <Link href={`/admin/edit/${p.id}`} className="border px-3 py-1 text-xs tracking-widest uppercase hover:bg-foreground hover:text-background">Edit</Link>
               <Link href={`/blog/${p.slug}`} target="_blank" className="border px-3 py-1 text-xs tracking-widest uppercase hover:bg-foreground hover:text-background">View</Link>
               <button onClick={() => del(p.id)} className="border border-red-300 text-red-600 px-3 py-1 text-xs tracking-widest uppercase hover:bg-red-600 hover:text-white">Delete</button>

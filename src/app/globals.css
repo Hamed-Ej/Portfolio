@@ -65,6 +65,7 @@ body {
   font-family: var(--font-mono), 'JetBrains Mono', 'Fira Code', 'SF Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
 }
 
 .font-lalezar {

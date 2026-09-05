@@ -95,7 +95,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-full flex flex-col font-mono bg-background text-foreground">
+      <body className="min-h-full flex flex-col font-mono bg-background text-foreground" suppressHydrationWarning>
         <ThemeProvider>
           <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-foreground text-background px-3 py-1 text-xs uppercase tracking-widest z-[100]">
             Skip to content

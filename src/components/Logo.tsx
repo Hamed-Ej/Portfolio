@@ -20,7 +20,7 @@ export function Logo({ size = 28, withWordmark = false, className }: { size?: nu
     );
   }
   return (
-    <svg width={size} height={size} viewBox="0 0 512 512" role="img" aria-label="HE logo" className={className}>
+    <svg width={size} height={size} viewBox="0 0 512 512" role="img" aria-label="HE logo" className={`block shrink-0 ${className ?? ''}`}>
       <g fill="none" stroke="currentColor" strokeWidth="26" strokeLinecap="square" strokeLinejoin="miter">
         <path d="M116 92 V420" />
         <path d="M236 92 V420" />

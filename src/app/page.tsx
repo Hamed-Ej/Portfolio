@@ -14,9 +14,9 @@ const socials = [
 
 export default function Home() {
   return (
-    <AnimatedStagger className="py-24">
-      <AnimatedItem className="mb-16">
-        <h1 className="text-7xl md:text-9xl font-black tracking-tighter leading-none mb-6 text-foreground">
+    <AnimatedStagger className="py-16 sm:py-24">
+      <AnimatedItem className="mb-12 sm:mb-16">
+        <h1 className="text-6xl sm:text-7xl md:text-9xl font-black tracking-tighter leading-none mb-6 text-foreground break-words">
           HAMED<br />EJBARI
         </h1>
         <div className="flex flex-wrap gap-4 text-xs tracking-widest text-gray-400 uppercase">
@@ -47,12 +47,12 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={s.name}
-            className="group flex items-center gap-2.5 text-gray-500 hover:text-foreground transition-colors"
+            className="group flex items-center gap-2.5 min-w-0 text-gray-500 hover:text-foreground transition-colors"
           >
-            <span className="inline-flex items-center justify-center w-7 h-7 border border-gray-200 dark:border-transparent bg-background group-hover:bg-foreground group-hover:text-background group-hover:border-foreground transition-colors">
+            <span className="inline-flex items-center justify-center w-7 h-7 shrink-0 border border-gray-200 dark:border-transparent bg-background group-hover:bg-foreground group-hover:text-background group-hover:border-foreground transition-colors">
               <s.Icon size={14} />
             </span>
-            <span className="tracking-widest text-xs uppercase">{s.name}</span>
+            <span className="tracking-widest text-xs uppercase truncate">{s.name}</span>
             <span className="opacity-0 group-hover:opacity-100 transition-opacity ml-auto sm:ml-0">&rarr;</span>
           </a>
         ))}
