@@ -2,7 +2,8 @@
 FROM node:20-alpine AS deps
 WORKDIR /app
 COPY package.json package-lock.json ./
-RUN npm ci --legacy-peer-deps || npm install --legacy-peer-deps
+# faster: use cache, reduce logs, fallback for peer mismatch
+RUN npm ci --legacy-peer-deps --loglevel=error --prefer-offline || npm install --legacy-peer-deps --loglevel=error --prefer-offline
 
 # --- Stage 2: Build ---
 FROM node:20-alpine AS builder
